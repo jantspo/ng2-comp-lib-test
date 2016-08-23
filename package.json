@@ -1,0 +1,24 @@
+{
+  "name": "ng2-comp-lib-test",
+  "version": "0.0.1",
+  "description": "Repo for test concept building ng2 component libraries",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jantspo/ng2-comp-lib-test.git"
+  },
+  "keywords": [
+    "angular2",
+    "library",
+    "components"
+  ],
+  "author": "John Sposato",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jantspo/ng2-comp-lib-test/issues"
+  },
+  "homepage": "https://github.com/jantspo/ng2-comp-lib-test#readme"
+}
