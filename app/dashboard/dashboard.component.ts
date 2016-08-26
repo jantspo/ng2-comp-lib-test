@@ -16,7 +16,7 @@ export class DashboardComponent {
         private router: Router){ }
 
     ngOnInit(): void {
-        this.heroService.getHeroes()
+        this.heroService.getHeroes('app/heroes')
             .then(heroes => this.heroes = heroes.slice(1,5));
     }
 

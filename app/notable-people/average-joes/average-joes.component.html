@@ -1,0 +1,8 @@
+<div>
+    <h4>Average Joes</h4>
+    <ul>
+        <li *ngFor="let person of people">
+            {{ person.name }} <button (click)="onClick(person)">Job</button>
+        </li>
+    </ul>
+</div>

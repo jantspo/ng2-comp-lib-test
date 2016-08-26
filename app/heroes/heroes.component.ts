@@ -20,12 +20,12 @@ export class HeroesComponent implements OnInit{
         private heroService: HeroService,
         private router: Router){}
 
-    getHeroes(): void{
-        this.heroService.getHeroes().then(heroes => this.heroes = heroes);
+    getHeroes(targetUrl: string): void{
+        this.heroService.getHeroes(targetUrl).then(heroes => this.heroes = heroes);
     }
 
     ngOnInit(): void {
-        this.getHeroes();
+        this.getHeroes('app/heroes');
     }
 
     onSelect(hero: Hero): void{
@@ -41,7 +41,7 @@ export class HeroesComponent implements OnInit{
     }
     close(savedHero: Hero): void{
         this.addingHero = false;
-        if (savedHero) {this.getHeroes();}
+        if (savedHero) {this.getHeroes('app/heroes');}
     }
     deleteHero(hero: Hero, event: any): void {
         event.stopPropagation();

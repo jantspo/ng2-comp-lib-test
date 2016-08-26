@@ -17,8 +17,14 @@ import { HeroesComponent }  from './heroes/heroes.component';
 import {DashboardComponent} from "./dashboard/dashboard.component";
 import {HeroDetailComponent} from "./heroes/hero-detail.component";
 import { HeroSearchComponent } from './heroes/hero-search.component'
+import { SuperHeroesComponent } from './notable-people/super-heroes/super-heroes.component';
+import { PeopleComponent } from './notable-people/people.component';
 //Service
 import { HeroService }  from './heroes/hero.service';
+import {PeopleService} from "./notable-people/people.service";
+import {HttpRequestsService} from "./services/http-requests.service";
+import {AverageJoesComponent} from "./notable-people/average-joes/average-joes.component";
+import {PeopleListComponent} from "./notable-people/people-list/people-list.component";
 
 @NgModule({
     imports: [
@@ -32,10 +38,17 @@ import { HeroService }  from './heroes/hero.service';
         HeroesComponent,
         DashboardComponent,
         HeroDetailComponent,
-        HeroSearchComponent
+        HeroSearchComponent,
+        SuperHeroesComponent,
+        PeopleComponent,
+        AverageJoesComponent,
+        SuperHeroesComponent,
+        PeopleListComponent
     ],
     providers:[
         HeroService,
+        PeopleService,
+        HttpRequestsService,
         { provide: XHRBackend, useClass: InMemoryBackendService }, // in-mem server
         { provide: SEED_DATA,  useClass: InMemoryDataService }     // in-mem server data
     ],

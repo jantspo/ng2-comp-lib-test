@@ -23,8 +23,14 @@ var heroes_component_1 = require('./heroes/heroes.component');
 var dashboard_component_1 = require("./dashboard/dashboard.component");
 var hero_detail_component_1 = require("./heroes/hero-detail.component");
 var hero_search_component_1 = require('./heroes/hero-search.component');
+var super_heroes_component_1 = require('./notable-people/super-heroes/super-heroes.component');
+var people_component_1 = require('./notable-people/people.component');
 //Service
 var hero_service_1 = require('./heroes/hero.service');
+var people_service_1 = require("./notable-people/people.service");
+var http_requests_service_1 = require("./services/http-requests.service");
+var average_joes_component_1 = require("./notable-people/average-joes/average-joes.component");
+var people_list_component_1 = require("./notable-people/people-list/people-list.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -41,10 +47,17 @@ var AppModule = (function () {
                 heroes_component_1.HeroesComponent,
                 dashboard_component_1.DashboardComponent,
                 hero_detail_component_1.HeroDetailComponent,
-                hero_search_component_1.HeroSearchComponent
+                hero_search_component_1.HeroSearchComponent,
+                super_heroes_component_1.SuperHeroesComponent,
+                people_component_1.PeopleComponent,
+                average_joes_component_1.AverageJoesComponent,
+                super_heroes_component_1.SuperHeroesComponent,
+                people_list_component_1.PeopleListComponent
             ],
             providers: [
                 hero_service_1.HeroService,
+                people_service_1.PeopleService,
+                http_requests_service_1.HttpRequestsService,
                 { provide: http_2.XHRBackend, useClass: angular2_in_memory_web_api_1.InMemoryBackendService },
                 { provide: angular2_in_memory_web_api_1.SEED_DATA, useClass: in_memory_data_service_1.InMemoryDataService } // in-mem server data
             ],

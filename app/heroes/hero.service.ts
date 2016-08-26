@@ -10,8 +10,8 @@ export class HeroService{
     constructor(private http: Http){
 
     }
-    getHeroes(): Promise<Hero[]> {
-        return this.http.get(this.heroesUrl)
+    getHeroes(targetUrl: string): Promise<Hero[]> {
+        return this.http.get(targetUrl)
             .toPromise()
             .then(response => response.json().data as Hero[])
             .catch(this.handleError);
@@ -29,7 +29,6 @@ export class HeroService{
         }
         return this.post(hero);
     }
-
     private post(hero: Hero): Promise<Hero>{
         let headers = new Headers({
             'Content-Type': 'application/json'
@@ -69,7 +68,7 @@ export class HeroService{
     }
 
     getHero(id: number): Promise<Hero>{
-        return this.getHeroes()
+        return this.getHeroes('app/heroes')
             .then(heroes => heroes.find(hero => hero.id === id));
     }
 }

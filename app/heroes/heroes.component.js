@@ -17,12 +17,12 @@ var HeroesComponent = (function () {
         this.router = router;
         this.addingHero = false;
     }
-    HeroesComponent.prototype.getHeroes = function () {
+    HeroesComponent.prototype.getHeroes = function (targetUrl) {
         var _this = this;
-        this.heroService.getHeroes().then(function (heroes) { return _this.heroes = heroes; });
+        this.heroService.getHeroes(targetUrl).then(function (heroes) { return _this.heroes = heroes; });
     };
     HeroesComponent.prototype.ngOnInit = function () {
-        this.getHeroes();
+        this.getHeroes('app/heroes');
     };
     HeroesComponent.prototype.onSelect = function (hero) {
         this.selectedHero = hero;
@@ -37,7 +37,7 @@ var HeroesComponent = (function () {
     HeroesComponent.prototype.close = function (savedHero) {
         this.addingHero = false;
         if (savedHero) {
-            this.getHeroes();
+            this.getHeroes('app/heroes');
         }
     };
     HeroesComponent.prototype.deleteHero = function (hero, event) {

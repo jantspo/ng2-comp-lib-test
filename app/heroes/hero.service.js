@@ -16,8 +16,8 @@ var HeroService = (function () {
         this.http = http;
         this.heroesUrl = 'app/heroes';
     }
-    HeroService.prototype.getHeroes = function () {
-        return this.http.get(this.heroesUrl)
+    HeroService.prototype.getHeroes = function (targetUrl) {
+        return this.http.get(targetUrl)
             .toPromise()
             .then(function (response) { return response.json().data; })
             .catch(this.handleError);
@@ -63,7 +63,7 @@ var HeroService = (function () {
             .catch(this.handleError);
     };
     HeroService.prototype.getHero = function (id) {
-        return this.getHeroes()
+        return this.getHeroes('app/heroes')
             .then(function (heroes) { return heroes.find(function (hero) { return hero.id === id; }); });
     };
     HeroService = __decorate([
